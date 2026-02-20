@@ -1,0 +1,2052 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+  branch: master
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor: &ref_0
+      preview: false
+    folder: cms/pages
+    fields: &ref_1
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_2
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Twitter Image
+            name: twitter:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: pages-styleguide
+    label: Pages styleguide
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor: *ref_0
+    folder: cms/pages/styleguide
+    fields: *ref_1
+  - name: palenque_2026
+    label: PALENQUE 2026s
+    folder: cms/palenque-2026
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_imagen-principal
+        label: Imagen Principal
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_short-desc
+        label: Short Desc
+        widget: string
+        required: false
+      - hint: ''
+        name: f_description
+        label: Description
+        widget: text
+        required: false
+      - hint: ''
+        name: f_fecha-texto-2
+        label: Fecha texto
+        widget: string
+        required: false
+      - hint: ''
+        name: f_nombre-artista
+        label: nombre artista
+        widget: string
+        required: false
+      - hint: ''
+        name: f_nombre-artista-w1
+        label: nombre artista w1
+        widget: string
+        required: false
+      - hint: ''
+        name: f_nombre-artista-w2
+        label: nombre artista w2
+        widget: string
+        required: false
+      - hint: ''
+        name: f_link-gradas
+        label: Link Gradas
+        widget: string
+        required: false
+      - hint: ''
+        name: f_link-plata
+        label: Link Plata
+        widget: string
+        required: false
+      - hint: ''
+        name: f_link-oro
+        label: Link Oro
+        widget: string
+        required: false
+      - hint: ''
+        name: f_link-vip
+        label: Link VIP
+        widget: string
+        required: false
+      - hint: ''
+        name: f_fecha-calendario-2
+        label: Fecha Calendario
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_imagen-fondo
+        label: Imagen Fondo
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_imagen-extra
+        label: Imagen Extra
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f__noSearch
+        label: No Search
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: palenque-2026
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[palenque-2026].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_2
+  - name: palenque_2025
+    label: PALENQUE 2025s
+    folder: cms/palenque-2025
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_short-desc
+        label: Short Desc
+        widget: string
+        required: false
+      - hint: ''
+        name: f_description
+        label: Description
+        widget: text
+        required: false
+      - hint: ''
+        name: f_fecha-texto-2
+        label: Fecha texto
+        widget: string
+        required: false
+      - hint: ''
+        name: f_nombre-artista
+        label: nombre artista
+        widget: string
+        required: false
+      - hint: ''
+        name: f_nombre-artista-w1
+        label: nombre artista w1
+        widget: string
+        required: false
+      - hint: ''
+        name: f_nombre-artista-w2
+        label: nombre artista w2
+        widget: string
+        required: false
+      - hint: ''
+        name: f_link-gradas
+        label: Link Gradas
+        widget: string
+        required: false
+      - hint: ''
+        name: f_link-plata
+        label: Link Plata
+        widget: string
+        required: false
+      - hint: ''
+        name: f_link-oro
+        label: Link Oro
+        widget: string
+        required: false
+      - hint: ''
+        name: f_link-vip
+        label: Link VIP
+        widget: string
+        required: false
+      - hint: ''
+        name: f_fecha-calendario-2
+        label: Fecha Calendario
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_imagen-principal
+        label: Imagen Principal
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_imagen-fondo
+        label: Imagen Fondo
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_imagen-extra
+        label: Imagen Extra
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f__noSearch
+        label: No Search
+        widget: boolean
+        required: false
+        default: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: palenque-2025
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[palenque-2025].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_2
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: 'Original text: Color, key: 3e43f43'
+            label: Text
+            name: 3e43f43
+            widget: string
+          - hint: 'Original text: Properties, key: 3f9f6953'
+            label: Text
+            name: 3f9f6953
+            widget: string
+          - hint: 'Original text: Background Color, key: -26192e0f'
+            label: Text
+            name: '-26192e0f'
+            widget: string
+          - hint: 'Original text: bc1-4, key: 592bdb7'
+            label: Text
+            name: 592bdb7
+            widget: string
+          - hint: 'Original text: Font Color, key: -14ab7bae'
+            label: Text
+            name: '-14ab7bae'
+            widget: string
+          - hint: 'Original text: fc1-4, key: 5cb1bbb'
+            label: Text
+            name: 5cb1bbb
+            widget: string
+          - hint: 'Original text: Outline Color, key: 3163d1c5'
+            label: Text
+            name: 3163d1c5
+            widget: string
+          - hint: 'Original text: oc1-4, key: 649ef44'
+            label: Text
+            name: 649ef44
+            widget: string
+          - hint: 'Original text: Background Color Global, key: 140ca4d2'
+            label: Text
+            name: 140ca4d2
+            widget: string
+          - hint: 'Original text: bc1-7g, key: -533b0613'
+            label: Text
+            name: '-533b0613'
+            widget: string
+          - hint: 'Original text: Font Color Global, key: -147b4caf'
+            label: Text
+            name: '-147b4caf'
+            widget: string
+          - hint: 'Original text: fc1-7g, key: -4c67a397'
+            label: Text
+            name: '-4c67a397'
+            widget: string
+          - hint: 'Original text: Outline Color Global, key: -14c41182'
+            label: Text
+            name: '-14c41182'
+            widget: string
+          - hint: 'Original text: oc1-7g, key: -3d0c0600'
+            label: Text
+            name: '-3d0c0600'
+            widget: string
+          - hint: 'Original text: Global Swatches, key: -7a739e39'
+            label: Text
+            name: '-7a739e39'
+            widget: string
+          - hint: 'Original text: bc1g, key: 2e0657'
+            label: Text
+            name: '2e0657'
+            widget: string
+          - hint: 'Original text: bc2g, key: 2e0676'
+            label: Text
+            name: '2e0676'
+            widget: string
+          - hint: 'Original text: bc3g, key: 2e0695'
+            label: Text
+            name: '2e0695'
+            widget: string
+          - hint: 'Original text: bc4g, key: 2e06b4'
+            label: Text
+            name: 2e06b4
+            widget: string
+          - hint: 'Original text: bc5g, key: 2e06d3'
+            label: Text
+            name: 2e06d3
+            widget: string
+          - hint: 'Original text: bc6g, key: 2e06f2'
+            label: Text
+            name: 2e06f2
+            widget: string
+          - hint: 'Original text: Modes, key: 4710b10'
+            label: Text
+            name: 4710b10
+            widget: string
+          - hint: 'Original text: md1, key: 1a57a'
+            label: Text
+            name: 1a57a
+            widget: string
+          - hint: 'Original text: Mode 1 Swatches, key: 2bf6f96'
+            label: Text
+            name: 2bf6f96
+            widget: string
+          - hint: 'Original text: bc1, key: 17c10'
+            label: Text
+            name: 17c10
+            widget: string
+          - hint: 'Original text: bc2, key: 17c11'
+            label: Text
+            name: 17c11
+            widget: string
+          - hint: 'Original text: bc3, key: 17c12'
+            label: Text
+            name: 17c12
+            widget: string
+          - hint: 'Original text: bc4, key: 17c13'
+            label: Text
+            name: 17c13
+            widget: string
+          - hint: 'Original text: md2, key: 1a57b'
+            label: Text
+            name: 1a57b
+            widget: string
+          - hint: 'Original text: Mode 2 Swatches, key: -8f71f4b'
+            label: Text
+            name: '-8f71f4b'
+            widget: string
+          - hint: 'Original text: Accent Color, key: 55861c8d'
+            label: Text
+            name: 55861c8d
+            widget: string
+          - hint: 'Original text: ac1, key: 1784f'
+            label: Text
+            name: 1784f
+            widget: string
+          - hint: 'Original text: ac2, key: 17850'
+            label: Text
+            name: '17850'
+            widget: string
+          - hint: 'Original text: ac3, key: 17851'
+            label: Text
+            name: '17851'
+            widget: string
+          - hint: 'Original text: Framework: Lumos (Beta), key: 442b2acd'
+            label: Text
+            name: 442b2acd
+            widget: string
+          - hint: 'Original text: Reventa de boletos, key: -365e6ce6'
+            label: Text
+            name: '-365e6ce6'
+            widget: string
+          - hint: 'Original text: palenque, key: 3bce75bd'
+            label: Text
+            name: 3bce75bd
+            widget: string
+          - hint: 'Original text: Feria de león, key: 4332edfe'
+            label: Text
+            name: 4332edfe
+            widget: string
+          - hint: >-
+              Original text: ¡Gracias por tu preferencia, hasta el 2027!, key:
+              6d9fa055
+            label: Text
+            name: 6d9fa055
+            widget: string
+          - hint: 'Original text: RV BOLETOS, key: 3922df16'
+            label: Text
+            name: 3922df16
+            widget: string
+          - hint: 'Original text: VELARIA, key: 3f640e06'
+            label: Text
+            name: 3f640e06
+            widget: string
+          - hint: >-
+              Original text: ¿Buscas boletos para los eventos de la Velaria en
+              León?, key: -7de8e56e
+            label: Text
+            name: '-7de8e56e'
+            widget: string
+          - hint: 'Original text: ¡Nosotros los tenemos!, key: -7e44cff8'
+            label: Text
+            name: '-7e44cff8'
+            widget: string
+          - hint: 'Original text: Contactar, key: 5ef0c831'
+            label: Text
+            name: 5ef0c831
+            widget: string
+          - hint: 'Original text: Contact, key: -64104400'
+            label: Text
+            name: '-64104400'
+            widget: string
+          - hint: 'Original text: Contacto, key: -1df83b91'
+            label: Text
+            name: '-1df83b91'
+            widget: string
+          - hint: >-
+              Original text: "¿Quieres vivir la mejor experiencia en el Palenque
+              de León?, key: -61511945
+            label: Text
+            name: '-61511945'
+            widget: string
+          - hint: 'Original text: ‍, key: 200d'
+            label: Text
+            name: 200d
+            widget: string
+          - hint: >-
+              Original text: ¡Compra tus entradas con Jusa en línea! , key:
+              2071b0e5
+            label: Text
+            name: 2071b0e5
+            widget: string
+          - hint: >-
+              Original text: Te garantizamos calidad y servicio en cada una de
+              tus compras. Con Jussa, disfruta de la comodidad de adquirir tus
+              boletos para los eventos más emocionantes, sin complicaciones. ,
+              key: -4ddff9ef
+            label: Text
+            name: '-4ddff9ef'
+            widget: text
+          - hint: >-
+              Original text: ¡Vive la emoción del Palenque de León con Jussa y
+              asegura tu lugar en los espectáculos que amas!", key: 6bc29982
+            label: Text
+            name: 6bc29982
+            widget: text
+          - hint: 'Original text: Direct links, key: -3a28ff1e'
+            label: Text
+            name: '-3a28ff1e'
+            widget: string
+          - hint: >-
+              Original text: Get in direct contact and let's start working
+              together on your project!, key: 96452c5
+            label: Text
+            name: 96452c5
+            widget: string
+          - hint: 'Original text: CONTACTO DIRECTO, key: 38249ab5'
+            label: Text
+            name: 38249ab5
+            widget: string
+          - hint: 'Original text: 477 6985243, key: 1e17cb25'
+            label: Text
+            name: 1e17cb25
+            widget: string
+          - hint: 'Original text: Síguenos, key: 5d89e1b5'
+            label: Text
+            name: 5d89e1b5
+            widget: string
+          - hint: 'Original text: Follow us, key: -5ae7feb3'
+            label: Text
+            name: '-5ae7feb3'
+            widget: string
+          - hint: 'Original text: Nombre, key: -7496c417'
+            label: Text
+            name: '-7496c417'
+            widget: string
+          - hint: 'Original text: Name, key: 24eeab'
+            label: Text
+            name: 24eeab
+            widget: string
+          - hint: 'Original text: Número telefónico, key: 1d49d9d'
+            label: Text
+            name: 1d49d9d
+            widget: string
+          - hint: 'Original text: Phone number, key: -1f5cfda5'
+            label: Text
+            name: '-1f5cfda5'
+            widget: string
+          - hint: 'Original text: Dirección email, key: 30a0e388'
+            label: Text
+            name: 30a0e388
+            widget: string
+          - hint: 'Original text: Email address, key: 71575750'
+            label: Text
+            name: '71575750'
+            widget: string
+          - hint: 'Original text: Mensaje, key: -6422dd41'
+            label: Text
+            name: '-6422dd41'
+            widget: string
+          - hint: 'Original text: Message, key: -63dc6819'
+            label: Text
+            name: '-63dc6819'
+            widget: string
+          - hint: >-
+              Original text: Thank you! Your submission has been sent!, key:
+              -36b8c0b6
+            label: Text
+            name: '-36b8c0b6'
+            widget: string
+          - hint: 'Original text: ¡Gracias! Tu mensaje ya fue enviado., key: 356d88cc'
+            label: Text
+            name: 356d88cc
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: >-
+              Original text: Algo no anda bien, no se puede enviar la
+              información., key: -2f98d6dd
+            label: Text
+            name: '-2f98d6dd'
+            widget: string
+          - hint: 'Original text: Derechos reservados., key: 70c5da9b'
+            label: Text
+            name: 70c5da9b
+            widget: string
+          - hint: "Original text: JUSA\_2026, key: -7fda797"
+            label: Text
+            name: '-7fda797'
+            widget: string
+          - hint: 'Original text: Privacy Policy., key: 48010864'
+            label: Text
+            name: '48010864'
+            widget: string
+          - hint: 'Original text: Terms and Conditions., key: 21d0cad4'
+            label: Text
+            name: 21d0cad4
+            widget: string
+          - hint: 'Original text: Components, key: 5c265f36'
+            label: Text
+            name: 5c265f36
+            widget: string
+          - hint: 'Original text: Buttons, key: 719b5761'
+            label: Text
+            name: 719b5761
+            widget: string
+          - hint: 'Original text: Comprar, key: -641fed6c'
+            label: Text
+            name: '-641fed6c'
+            widget: string
+          - hint: 'Original text: Cards, key: 3ddf743'
+            label: Text
+            name: 3ddf743
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique duis
+              cursus, key: -72eb55d1
+            label: Text
+            name: '-72eb55d1'
+            widget: text
+          - hint: 'Original text: Forms, key: 40e9c0f'
+            label: Text
+            name: 40e9c0f
+            widget: string
+          - hint: 'Original text: Email Address, key: -2b7010d0'
+            label: Text
+            name: '-2b7010d0'
+            widget: string
+          - hint: 'Original text: Checkbox, key: 5f757fe3'
+            label: Text
+            name: 5f757fe3
+            widget: string
+          - hint: 'Original text: Radio 1, key: -630862d4'
+            label: Text
+            name: '-630862d4'
+            widget: string
+          - hint: 'Original text: Radio 2, key: -630862d3'
+            label: Text
+            name: '-630862d3'
+            widget: string
+          - hint: 'Original text: Radio 3, key: -630862d2'
+            label: Text
+            name: '-630862d2'
+            widget: string
+          - hint: 'Original text: Select one..., key: 57f3b1cc'
+            label: Text
+            name: 57f3b1cc
+            widget: string
+          - hint: 'Original text: First choice, key: -12801ecf'
+            label: Text
+            name: '-12801ecf'
+            widget: string
+          - hint: 'Original text: Second choice, key: 72dc86ad'
+            label: Text
+            name: 72dc86ad
+            widget: string
+          - hint: 'Original text: Third choice, key: 1b66029a'
+            label: Text
+            name: 1b66029a
+            widget: string
+          - hint: >-
+              Original text: Thank you! Your submission has been received!, key:
+              5a0ea5a1
+            label: Text
+            name: 5a0ea5a1
+            widget: string
+          - hint: 'Original text: Layout, key: -78c018b6'
+            label: Text
+            name: '-78c018b6'
+            widget: string
+          - hint: 'Original text: Grid, key: 21ff66'
+            label: Text
+            name: 21ff66
+            widget: string
+          - hint: 'Original text: gd1, key: 18ef4'
+            label: Text
+            name: 18ef4
+            widget: string
+          - hint: 'Original text: Columns Portrait, key: 8934be'
+            label: Text
+            name: 8934be
+            widget: string
+          - hint: 'Original text: cp1-12, key: -50cefcd6'
+            label: Text
+            name: '-50cefcd6'
+            widget: string
+          - hint: 'Original text: Columns Landscape, key: 22639df8'
+            label: Text
+            name: 22639df8
+            widget: string
+          - hint: 'Original text: cl1-12, key: -51075ada'
+            label: Text
+            name: '-51075ada'
+            widget: string
+          - hint: 'Original text: Columns Tablet, key: 67caa449'
+            label: Text
+            name: 67caa449
+            widget: string
+          - hint: 'Original text: ct1-12, key: -50969ed2'
+            label: Text
+            name: '-50969ed2'
+            widget: string
+          - hint: 'Original text: Columns Desktop, key: 4ae8e699'
+            label: Text
+            name: 4ae8e699
+            widget: string
+          - hint: 'Original text: cd1-12, key: -517816e2'
+            label: Text
+            name: '-517816e2'
+            widget: string
+          - hint: 'Original text: Rows Portrait, key: 672bb202'
+            label: Text
+            name: 672bb202
+            widget: string
+          - hint: 'Original text: rp1-6, key: 67a1e9c'
+            label: Text
+            name: 67a1e9c
+            widget: string
+          - hint: 'Original text: Rows Landscape, key: -6fef36cc'
+            label: Text
+            name: '-6fef36cc'
+            widget: string
+          - hint: 'Original text: rl1-6, key: 6784d20'
+            label: Text
+            name: 6784d20
+            widget: string
+          - hint: 'Original text: Rows Tablet, key: 64b3a28d'
+            label: Text
+            name: 64b3a28d
+            widget: string
+          - hint: 'Original text: rt1-6, key: 67bf018'
+            label: Text
+            name: 67bf018
+            widget: string
+          - hint: 'Original text: Rows Desktop, key: -14e04f2b'
+            label: Text
+            name: '-14e04f2b'
+            widget: string
+          - hint: 'Original text: rd1-6, key: 674aa28'
+            label: Text
+            name: 674aa28
+            widget: string
+          - hint: 'Original text: Example Grid, key: ef847c'
+            label: Text
+            name: ef847c
+            widget: string
+          - hint: 'Original text: Adaptive Spacing, key: -234fa367'
+            label: Text
+            name: '-234fa367'
+            widget: string
+          - hint: 'Original text: Gap, key: 116b6'
+            label: Text
+            name: 116b6
+            widget: string
+          - hint: 'Original text: gp0-20, key: -49fc0e9c'
+            label: Text
+            name: '-49fc0e9c'
+            widget: string
+          - hint: 'Original text: Gap Horizontal, key: -38018412'
+            label: Text
+            name: '-38018412'
+            widget: string
+          - hint: 'Original text: gh0-20, key: -4a6ccaa4'
+            label: Text
+            name: '-4a6ccaa4'
+            widget: string
+          - hint: 'Original text: Gap Vertical, key: -7ccd3e40'
+            label: Text
+            name: '-7ccd3e40'
+            widget: string
+          - hint: 'Original text: gv0-20, key: -49a78196'
+            label: Text
+            name: '-49a78196'
+            widget: string
+          - hint: 'Original text: Padding, key: 3328d3f1'
+            label: Text
+            name: 3328d3f1
+            widget: string
+          - hint: 'Original text: pd0-20, key: -3b498b11'
+            label: Text
+            name: '-3b498b11'
+            widget: string
+          - hint: 'Original text: Padding Horizontal, key: -2c80442d'
+            label: Text
+            name: '-2c80442d'
+            widget: string
+          - hint: 'Original text: ph0-20, key: -3b112d0d'
+            label: Text
+            name: '-3b112d0d'
+            widget: string
+          - hint: 'Original text: Padding Vertical, key: 715cb6e5'
+            label: Text
+            name: 715cb6e5
+            widget: string
+          - hint: 'Original text: pv0-20, key: -3a4be3ff'
+            label: Text
+            name: '-3a4be3ff'
+            widget: string
+          - hint: 'Original text: Padding Top, key: 9db4886'
+            label: Text
+            name: 9db4886
+            widget: string
+          - hint: 'Original text: pt0-20, key: -3a681301'
+            label: Text
+            name: '-3a681301'
+            widget: string
+          - hint: 'Original text: Padding Bottom, key: -197706a6'
+            label: Text
+            name: '-197706a6'
+            widget: string
+          - hint: 'Original text: pb0-20, key: -3b65ba13'
+            label: Text
+            name: '-3b65ba13'
+            widget: string
+          - hint: 'Original text: Padding Left, key: 3189fef6'
+            label: Text
+            name: 3189fef6
+            widget: string
+          - hint: 'Original text: pl0-20, key: -3ad8cf09'
+            label: Text
+            name: '-3ad8cf09'
+            widget: string
+          - hint: 'Original text: Padding Right, key: c410d'
+            label: Text
+            name: c410d
+            widget: string
+          - hint: 'Original text: pr0-20, key: -3a844203'
+            label: Text
+            name: '-3a844203'
+            widget: string
+          - hint: 'Original text: Values, key: -67b576be'
+            label: Text
+            name: '-67b576be'
+            widget: string
+          - hint: 'Original text: 0, key: 30'
+            label: Text
+            name: '30'
+            widget: string
+          - hint: 'Original text: 0.5, key: b9f7'
+            label: Text
+            name: b9f7
+            widget: string
+          - hint: 'Original text: 1, key: 31'
+            label: Text
+            name: '31'
+            widget: string
+          - hint: 'Original text: 1.5, key: bdb8'
+            label: Text
+            name: bdb8
+            widget: string
+          - hint: 'Original text: 2, key: 32'
+            label: Text
+            name: '32'
+            widget: string
+          - hint: 'Original text: 2.5, key: c179'
+            label: Text
+            name: c179
+            widget: string
+          - hint: 'Original text: 3, key: 33'
+            label: Text
+            name: '33'
+            widget: string
+          - hint: 'Original text: 3.5, key: c53a'
+            label: Text
+            name: c53a
+            widget: string
+          - hint: 'Original text: 4, key: 34'
+            label: Text
+            name: '34'
+            widget: string
+          - hint: 'Original text: 5, key: 35'
+            label: Text
+            name: '35'
+            widget: string
+          - hint: 'Original text: 6, key: 36'
+            label: Text
+            name: '36'
+            widget: string
+          - hint: 'Original text: 7, key: 37'
+            label: Text
+            name: '37'
+            widget: string
+          - hint: 'Original text: 8, key: 38'
+            label: Text
+            name: '38'
+            widget: string
+          - hint: 'Original text: 9, key: 39'
+            label: Text
+            name: '39'
+            widget: string
+          - hint: 'Original text: 10, key: 61f'
+            label: Text
+            name: 61f
+            widget: string
+          - hint: 'Original text: 11, key: 620'
+            label: Text
+            name: '620'
+            widget: string
+          - hint: 'Original text: 12, key: 621'
+            label: Text
+            name: '621'
+            widget: string
+          - hint: 'Original text: 13, key: 622'
+            label: Text
+            name: '622'
+            widget: string
+          - hint: 'Original text: 14, key: 623'
+            label: Text
+            name: '623'
+            widget: string
+          - hint: 'Original text: 15, key: 624'
+            label: Text
+            name: '624'
+            widget: string
+          - hint: 'Original text: 16, key: 625'
+            label: Text
+            name: '625'
+            widget: string
+          - hint: 'Original text: 17, key: 626'
+            label: Text
+            name: '626'
+            widget: string
+          - hint: 'Original text: 18, key: 627'
+            label: Text
+            name: '627'
+            widget: string
+          - hint: 'Original text: 19, key: 628'
+            label: Text
+            name: '628'
+            widget: string
+          - hint: 'Original text: 20, key: 63e'
+            label: Text
+            name: 63e
+            widget: string
+          - hint: 'Original text: Typography, key: 5500514f'
+            label: Text
+            name: 5500514f
+            widget: string
+          - hint: 'Original text: Font Styles, key: -652a1e2d'
+            label: Text
+            name: '-652a1e2d'
+            widget: string
+          - hint: 'Original text: fs0.5, key: 5d25e0a'
+            label: Text
+            name: 5d25e0a
+            widget: string
+          - hint: 'Original text: Display, key: -39224f5e'
+            label: Text
+            name: '-39224f5e'
+            widget: string
+          - hint: 'Original text: Heading, key: -6d5fea1e'
+            label: Text
+            name: '-6d5fea1e'
+            widget: string
+          - hint: 'Original text: fs1, key: 18d04'
+            label: Text
+            name: 18d04
+            widget: string
+          - hint: 'Original text: H1, key: 8e9'
+            label: Text
+            name: '8e9'
+            widget: string
+          - hint: 'Original text: fs2, key: 18d05'
+            label: Text
+            name: 18d05
+            widget: string
+          - hint: 'Original text: H2, key: 8ea'
+            label: Text
+            name: 8ea
+            widget: string
+          - hint: 'Original text: fs3, key: 18d06'
+            label: Text
+            name: 18d06
+            widget: string
+          - hint: 'Original text: H3, key: 8eb'
+            label: Text
+            name: 8eb
+            widget: string
+          - hint: 'Original text: fs4, key: 18d07'
+            label: Text
+            name: 18d07
+            widget: string
+          - hint: 'Original text: H4, key: 8ec'
+            label: Text
+            name: 8ec
+            widget: string
+          - hint: 'Original text: fs5, key: 18d08'
+            label: Text
+            name: 18d08
+            widget: string
+          - hint: 'Original text: H5, key: 8ed'
+            label: Text
+            name: 8ed
+            widget: string
+          - hint: 'Original text: fs6, key: 18d09'
+            label: Text
+            name: 18d09
+            widget: string
+          - hint: 'Original text: H6, key: 8ee'
+            label: Text
+            name: 8ee
+            widget: string
+          - hint: 'Original text: fs7, key: 18d0a'
+            label: Text
+            name: 18d0a
+            widget: string
+          - hint: 'Original text: Paragraph Main, key: 5129216b'
+            label: Text
+            name: 5129216b
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra ornare, key: -28edd209
+            label: Text
+            name: '-28edd209'
+            widget: text
+          - hint: 'Original text: fs7.5, key: 5d27851'
+            label: Text
+            name: 5d27851
+            widget: string
+          - hint: 'Original text: Paragraph Large, key: -2c12ea37'
+            label: Text
+            name: '-2c12ea37'
+            widget: string
+          - hint: 'Original text: fs7.1, key: 5d2784d'
+            label: Text
+            name: 5d2784d
+            widget: string
+          - hint: 'Original text: Paragraph Small, key: -2bab106b'
+            label: Text
+            name: '-2bab106b'
+            widget: string
+          - hint: 'Original text: Font Family, key: -7c6a5bab'
+            label: Text
+            name: '-7c6a5bab'
+            widget: string
+          - hint: 'Original text: ff1, key: 18b71'
+            label: Text
+            name: 18b71
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique., key:
+              6f9475d5
+            label: Text
+            name: 6f9475d5
+            widget: text
+          - hint: 'Original text: ff2, key: 18b72'
+            label: Text
+            name: 18b72
+            widget: string
+          - hint: 'Original text: ff3, key: 18b73'
+            label: Text
+            name: 18b73
+            widget: string
+          - hint: 'Original text: Font Weight, key: -5f317497'
+            label: Text
+            name: '-5f317497'
+            widget: string
+          - hint: 'Original text: fw1, key: 18d80'
+            label: Text
+            name: 18d80
+            widget: string
+          - hint: 'Original text: fw2, key: 18d81'
+            label: Text
+            name: 18d81
+            widget: string
+          - hint: 'Original text: fw3, key: 18d82'
+            label: Text
+            name: 18d82
+            widget: string
+          - hint: 'Original text: Line Height, key: 34a7c2d3'
+            label: Text
+            name: 34a7c2d3
+            widget: string
+          - hint: 'Original text: lh1, key: 1a235'
+            label: Text
+            name: 1a235
+            widget: string
+          - hint: 'Original text: lh2, key: 1a236'
+            label: Text
+            name: 1a236
+            widget: string
+          - hint: 'Original text: lh3, key: 1a237'
+            label: Text
+            name: 1a237
+            widget: string
+          - hint: 'Original text: lh4, key: 1a238'
+            label: Text
+            name: 1a238
+            widget: string
+          - hint: 'Original text: Letter Spacing, key: 6a8b8249'
+            label: Text
+            name: 6a8b8249
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra ornare, eros dolor interdum nulla, key:
+              -6fe0a9e6
+            label: Text
+            name: '-6fe0a9e6'
+            widget: text
+          - hint: 'Original text: ls0, key: 1a389'
+            label: Text
+            name: 1a389
+            widget: string
+          - hint: 'Original text: ls1, key: 1a38a'
+            label: Text
+            name: 1a38a
+            widget: string
+          - hint: 'Original text: Text Transform, key: -774313c7'
+            label: Text
+            name: '-774313c7'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, key: 3ccc0cde
+            label: Text
+            name: 3ccc0cde
+            widget: string
+          - hint: 'Original text: tt0, key: 1c1b0'
+            label: Text
+            name: 1c1b0
+            widget: string
+          - hint: 'Original text: tt1, key: 1c1b1'
+            label: Text
+            name: 1c1b1
+            widget: string
+          - hint: 'Original text: tt2, key: 1c1b2'
+            label: Text
+            name: 1c1b2
+            widget: string
+          - hint: 'Original text: tt3, key: 1c1b3'
+            label: Text
+            name: 1c1b3
+            widget: string
+          - hint: 'Original text: Line Clamp, key: 11f3918f'
+            label: Text
+            name: 11f3918f
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+              commodo diam libero vitae erat. Aenean faucibus nibh et justo
+              cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
+              tristique posuere., key: -5286fc08
+            label: Text
+            name: '-5286fc08'
+            widget: text
+          - hint: 'Original text: lc1, key: 1a19a'
+            label: Text
+            name: 1a19a
+            widget: string
+          - hint: 'Original text: lc2, key: 1a19b'
+            label: Text
+            name: 1a19b
+            widget: string
+          - hint: 'Original text: lc3, key: 1a19c'
+            label: Text
+            name: 1a19c
+            widget: string
+          - hint: 'Original text: lc4, key: 1a19d'
+            label: Text
+            name: 1a19d
+            widget: string
+          - hint: 'Original text: Typography Elements, key: 765dbcc8'
+            label: Text
+            name: 765dbcc8
+            widget: string
+          - hint: 'Original text: All Ordered Lists, key: 4209e983'
+            label: Text
+            name: '4209e983'
+            widget: string
+          - hint: >-
+              Original text: This is some text inside of a div block., key:
+              7635fb4f
+            label: Text
+            name: 7635fb4f
+            widget: string
+          - hint: 'Original text: All Unordered Lists, key: -73afc0b6'
+            label: Text
+            name: '-73afc0b6'
+            widget: string
+          - hint: 'Original text: All Block Quotes, key: -101a4b17'
+            label: Text
+            name: '-101a4b17'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo, key: -193e09c8
+            label: Text
+            name: '-193e09c8'
+            widget: text
+          - hint: 'Original text: rich-text, key: -34f9d882'
+            label: Text
+            name: '-34f9d882'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet conse ctetur, key:
+              -60404335
+            label: Text
+            name: '-60404335'
+            widget: string
+          - hint: 'Original text: List item one, key: 596c24fb'
+            label: Text
+            name: 596c24fb
+            widget: string
+          - hint: 'Original text: List item two, key: 596c38e1'
+            label: Text
+            name: 596c38e1
+            widget: string
+          - hint: 'Original text: List item three, key: -50c5350d'
+            label: Text
+            name: '-50c5350d'
+            widget: string
+          - hint: 'Original text: Utilities, key: -42872916'
+            label: Text
+            name: '-42872916'
+            widget: string
+          - hint: 'Original text: Pointer Events, key: -51fe4b64'
+            label: Text
+            name: '-51fe4b64'
+            widget: string
+          - hint: 'Original text: Not Clickable, key: 5194995'
+            label: Text
+            name: '5194995'
+            widget: string
+          - hint: 'Original text: pe0, key: 1b0db'
+            label: Text
+            name: 1b0db
+            widget: string
+          - hint: 'Original text: Clickable, key: 25776c2'
+            label: Text
+            name: 25776c2
+            widget: string
+          - hint: 'Original text: pe1, key: 1b0dc'
+            label: Text
+            name: 1b0dc
+            widget: string
+          - hint: 'Original text: Direct Children Clickable, key: -3b754488'
+            label: Text
+            name: '-3b754488'
+            widget: string
+          - hint: 'Original text: pe2, key: 1b0dd'
+            label: Text
+            name: 1b0dd
+            widget: string
+          - hint: 'Original text: Border Radius, key: 7dd6b306'
+            label: Text
+            name: 7dd6b306
+            widget: string
+          - hint: 'Original text: br0, key: 17de0'
+            label: Text
+            name: 17de0
+            widget: string
+          - hint: 'Original text: br1, key: 17de1'
+            label: Text
+            name: 17de1
+            widget: string
+          - hint: 'Original text: br2, key: 17de2'
+            label: Text
+            name: 17de2
+            widget: string
+          - hint: 'Original text: br3, key: 17de3'
+            label: Text
+            name: 17de3
+            widget: string
+          - hint: 'Original text: Outline Width, key: 327ad028'
+            label: Text
+            name: 327ad028
+            widget: string
+          - hint: 'Original text: ow0, key: 1af48'
+            label: Text
+            name: 1af48
+            widget: string
+          - hint: 'Original text: ow1, key: 1af49'
+            label: Text
+            name: 1af49
+            widget: string
+          - hint: 'Original text: ow2, key: 1af4a'
+            label: Text
+            name: 1af4a
+            widget: string
+          - hint: 'Original text: ow3, key: 1af4b'
+            label: Text
+            name: 1af4b
+            widget: string
+          - hint: 'Original text: Stroke Width, key: -71dc6e22'
+            label: Text
+            name: '-71dc6e22'
+            widget: string
+          - hint: 'Original text: Aa, key: 840'
+            label: Text
+            name: '840'
+            widget: string
+          - hint: 'Original text: sw0, key: 1be4c'
+            label: Text
+            name: 1be4c
+            widget: string
+          - hint: 'Original text: sw1, key: 1be4d'
+            label: Text
+            name: 1be4d
+            widget: string
+          - hint: 'Original text: sw2, key: 1be4e'
+            label: Text
+            name: 1be4e
+            widget: string
+          - hint: 'Original text: sw3, key: 1be4f'
+            label: Text
+            name: 1be4f
+            widget: string
+          - hint: 'Original text: Border Width, key: 45948d2'
+            label: Text
+            name: 45948d2
+            widget: string
+          - hint: 'Original text: bw0, key: 17e7b'
+            label: Text
+            name: 17e7b
+            widget: string
+          - hint: 'Original text: bw1, key: 17e7c'
+            label: Text
+            name: 17e7c
+            widget: string
+          - hint: 'Original text: bw2, key: 17e7d'
+            label: Text
+            name: 17e7d
+            widget: string
+          - hint: 'Original text: bw3, key: 17e7e'
+            label: Text
+            name: 17e7e
+            widget: string
+          - hint: 'Original text: Border Direction, key: -4214375'
+            label: Text
+            name: '-4214375'
+            widget: string
+          - hint: 'Original text: Top, key: 14935'
+            label: Text
+            name: '14935'
+            widget: string
+          - hint: 'Original text: bw3t, key: 2e51b6'
+            label: Text
+            name: 2e51b6
+            widget: string
+          - hint: 'Original text: Bottom, key: 76f2864b'
+            label: Text
+            name: 76f2864b
+            widget: string
+          - hint: 'Original text: bw3b, key: 2e51a4'
+            label: Text
+            name: 2e51a4
+            widget: string
+          - hint: 'Original text: Left, key: 241427'
+            label: Text
+            name: '241427'
+            widget: string
+          - hint: 'Original text: bw3l, key: 2e51ae'
+            label: Text
+            name: 2e51ae
+            widget: string
+          - hint: 'Original text: Right, key: 4b4d1fc'
+            label: Text
+            name: 4b4d1fc
+            widget: string
+          - hint: 'Original text: bw3r, key: 2e51b4'
+            label: Text
+            name: 2e51b4
+            widget: string
+          - hint: 'Original text: Horizontal, key: -367897bc'
+            label: Text
+            name: '-367897bc'
+            widget: string
+          - hint: 'Original text: bw3h, key: 2e51aa'
+            label: Text
+            name: 2e51aa
+            widget: string
+          - hint: 'Original text: Vertical, key: -7269346a'
+            label: Text
+            name: '-7269346a'
+            widget: string
+          - hint: 'Original text: bw3v, key: 2e51b8'
+            label: Text
+            name: 2e51b8
+            widget: string
+          - hint: 'Original text: Other Utilities, key: -69fb6246'
+            label: Text
+            name: '-69fb6246'
+            widget: string
+          - hint: >-
+              Original text: Position absolute. 100% width & height., key:
+              463df4e7
+            label: Text
+            name: 463df4e7
+            widget: string
+          - hint: 'Original text: ab1, key: 17830'
+            label: Text
+            name: '17830'
+            widget: string
+          - hint: 'Original text: Boletos, key: 66e6c8f2'
+            label: Text
+            name: 66e6c8f2
+            widget: string
+          - hint: 'Original text: Consulta Disponibilidad, key: 5096406'
+            label: Text
+            name: '5096406'
+            widget: string
+          - hint: 'Original text: Acerca de este evento, key: -6697acf6'
+            label: Text
+            name: '-6697acf6'
+            widget: string
+          - hint: "Original text: BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS · \_BOLETOS ·, key: 31d2c8c0"
+            label: Text
+            name: 31d2c8c0
+            widget: text
+          - hint: >-
+              Original text: SEGUROS · SEGUROS · SEGUROS · SEGUROS · SEGUROS ·
+              SEGUROS · SEGUROS · SEGUROS · SEGUROS · SEGUROS · SEGUROS ·
+              SEGUROS · SEGUROS · SEGUROS · SEGUROS · SEGUROS · SEGUROS ·
+              SEGUROS · SEGUROS · SEGUROS · SEGUROS · SEGUROS · SEGUROS ·
+              SEGUROS · SEGUROS · SEGUROS · SEGUROS · SEGUROS ·, key: -35a2ac74
+            label: Text
+            name: '-35a2ac74'
+            widget: text
+          - hint: 'Original text: GRADAS, key: 7dca2f00'
+            label: Text
+            name: 7dca2f00
+            widget: string
+          - hint: 'Original text: CONSULTA DISPONIBILIDAD, key: -28494bfa'
+            label: Text
+            name: '-28494bfa'
+            widget: string
+          - hint: 'Original text: WHATSAPP, key: -5e07a66e'
+            label: Text
+            name: '-5e07a66e'
+            widget: string
+          - hint: 'Original text: PLATA, key: 48ae2f2'
+            label: Text
+            name: 48ae2f2
+            widget: string
+          - hint: 'Original text: ORO, key: 132cc'
+            label: Text
+            name: 132cc
+            widget: string
+          - hint: 'Original text: VIP, key: 14bfd'
+            label: Text
+            name: 14bfd
+            widget: string
+          - hint: >-
+              Original text: LA COMPRA DE ESTE BOLETO NO TE DA DERECHO DE
+              FALTAR... LA COMPRA DE ESTE BOLETO NO TE DA DERECHO DE FALTAR...
+              LA COMPRA DE ESTE BOLETO NO TE DA DERECHO DE FALTAR... LA COMPRA
+              DE ESTE BOLETO NO TE DA DERECHO DE FALTAR... LA COMPRA DE ESTE
+              BOLETO NO TE DA DERECHO DE FALTAR... LA COMPRA DE ESTE BOLETO NO
+              TE DA DERECHO DE FALTAR... LA COMPRA DE ESTE BOLETO NO TE DA
+              DERECHO DE FALTAR... LA COMPRA DE ESTE BOLETO NO TE DA DERECHO DE
+              FALTAR... LA COMPRA DE ESTE BOLETO NO TE DA DERECHO DE FALTAR...
+              LA COMPRA DE ESTE BOLETO NO TE DA DERECHO DE FALTAR... , key:
+              4ab2a140
+            label: Text
+            name: 4ab2a140
+            widget: text
+          - hint: 'Original text: ¿qué incluye , key: 4a78f007'
+            label: Text
+            name: 4a78f007
+            widget: string
+          - hint: 'Original text: mi COMPRA?, key: 32ef53fd'
+            label: Text
+            name: 32ef53fd
+            widget: string
+          - hint: 'Original text: 🎫, key: 1b0eef'
+            label: Text
+            name: 1b0eef
+            widget: string
+          - hint: 'Original text: ⚡️, key: 5ab8e'
+            label: Text
+            name: 5ab8e
+            widget: string
+          - hint: 'Original text: 🤝🏼, key: 65a5701f'
+            label: Text
+            name: 65a5701f
+            widget: string
+          - hint: 'Original text: Boleto de acceso al evento., key: 2c5eac4'
+            label: Text
+            name: 2c5eac4
+            widget: string
+          - hint: 'Original text: Velocidad de compra., key: 4af0da82'
+            label: Text
+            name: 4af0da82
+            widget: string
+          - hint: 'Original text: Seguridad y respaldo., key: -3d0e80cf'
+            label: Text
+            name: '-3d0e80cf'
+            widget: string
+          - hint: 'Original text: zonas de asientos, key: 772079e2'
+            label: Text
+            name: '772079e2'
+            widget: string
+          - hint: >-
+              Original text: CONOCE NUESTROS PRÓXIMOS EVENTOS · CONOCE NUESTROS
+              PRÓXIMOS EVENTOS · CONOCE NUESTROS PRÓXIMOS EVENTOS · CONOCE
+              NUESTROS PRÓXIMOS EVENTOS · CONOCE NUESTROS PRÓXIMOS EVENTOS ·
+              CONOCE NUESTROS PRÓXIMOS EVENTOS ·, key: 9ada7a0
+            label: Text
+            name: 9ada7a0
+            widget: text
+          - hint: >-
+              Original text: DESCUBRE LOS PROXIMOS EVENTOS QUE TENEMOS PARA TI ·
+              DESCUBRE LOS PROXIMOS EVENTOS QUE TENEMOS PARA TI · DESCUBRE LOS
+              PROXIMOS EVENTOS QUE TENEMOS PARA TI · DESCUBRE LOS PROXIMOS
+              EVENTOS QUE TENEMOS PARA TI · DESCUBRE LOS PROXIMOS EVENTOS QUE
+              TENEMOS PARA TI, key: 20aab0e7
+            label: Text
+            name: 20aab0e7
+            widget: text
+          - hint: 'Original text: CoTIZar, key: -65924d96'
+            label: Text
+            name: '-65924d96'
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: NOMBRE, key: -7668bc37'
+            label: Text
+            name: '-7668bc37'
+            widget: string
+          - hint: 'Original text:  ARTISTA, key: -4b5ce46'
+            label: Text
+            name: '-4b5ce46'
+            widget: string
+          - hint: 'Original text: Eventos, key: 112cd9de'
+            label: Text
+            name: 112cd9de
+            widget: string
+          - hint: 'Original text: Acerca del evento, key: -6f116843'
+            label: Text
+            name: '-6f116843'
+            widget: string
+          - hint: 'Original text: ver evento, key: -5510cbce'
+            label: Text
+            name: '-5510cbce'
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: 'Original link: https://wa.link/vt0pti, key: 317d2393'
+            label: Link
+            name: 317d2393
+            widget: string
+          - hint: 'Original link: https://wa.link/ncl7id, key: 23013dfb'
+            label: Link
+            name: 23013dfb
+            widget: string
+          - hint: >-
+              Original link: https://www.instagram.com/palenque_leon_jusa/, key:
+              dbfc081
+            label: Link
+            name: dbfc081
+            widget: string
+          - hint: 'Original link: https://www.facebook.com/RVNTA.JUSA, key: -4d186820'
+            label: Link
+            name: '-4d186820'
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: 'Original link: #boletos, key: 3777538f'
+            label: Link
+            name: 3777538f
+            widget: string
+          - hint: 'Original link: #contacto, key: 23888d72'
+            label: Link
+            name: 23888d72
+            widget: string
+          - hint: 'Original link: #eventos, key: -1e429b85'
+            label: Link
+            name: '-1e429b85'
+            widget: string
+          - hint: >-
+              Original link: https://www.instagram.com/palenque_leon_jusa, key:
+              31fded6e
+            label: Link
+            name: 31fded6e
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: i3326753c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 46470bd1
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i461eff82
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 78c895e0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 799fcdad
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i6c05e57b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3e93a814
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '334e6828'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5038d340
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 69fa4699
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-78795634'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-39f8dd72'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 9e7479d
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '0'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4953bb75
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 28ca9eb3
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2cc33bf
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 515bdb5a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+local_backend: true
+publish_mode: editorial_workflow
